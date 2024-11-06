@@ -1,5 +1,15 @@
-import { DashboardCard } from "@/components/dashboard-card";
-import { Calendar, DollarSign, PersonStanding, UserPlus } from "lucide-react";
+import {
+  DashboardCard,
+  DashboardCardContent,
+} from "@/components/dashboard-card";
+import UserDataCard from "@/components/user-data-card";
+import {
+  Calendar,
+  DollarSign,
+  PersonStanding,
+  UserPlus,
+  UserRoundCheck,
+} from "lucide-react";
 
 export default async function Dashboard() {
   return (
@@ -32,6 +42,20 @@ export default async function Dashboard() {
               amount="12345"
               description="This Month"
             />
+          </section>
+          <section className="grid grid-cols-1 gap-4 transition-all lg:grid-cols-2">
+            <DashboardCardContent>
+              <section className="flex justify-between gap-2 pb-2">
+                <p>Recent Users</p>
+                <UserRoundCheck className="h-4 w-4" />
+              </section>
+              <UserDataCard
+                name="Jack Hasselblad"
+                image="./mesh.jpeg"
+                email="jackhasselblad@gmail.com"
+                time="2 hours ago"
+              />
+            </DashboardCardContent>
           </section>
         </div>
       </div>
